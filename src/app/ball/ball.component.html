@@ -1,1 +1,4 @@
-<span class="ball"></span>
+<span 
+    [ngClass]="className" (click)="changeClass()"
+    [ngStyle]="{'background-color': ballColor}"
+></span>

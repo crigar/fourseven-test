@@ -1,7 +1,70 @@
-.ball {
+%basic-ball {
     height: 55px;
     width: 55px;
-    background-color: #bbb;
+    position: relative;
     border-radius: 50%;
     display: inline-block;
+    top: 0;
+    left: 0;
+}
+
+.left-to-right {
+    @extend %basic-ball;
+    animation: anim-left-to-right 2s linear forwards;
+}
+
+.top-to-bottom {
+    @extend %basic-ball;
+    animation: anim-top-to-bottom 2s linear forwards;
+}
+
+.right-to-left {
+    @extend %basic-ball;
+    animation: anim-right-to-left 2s linear forwards;
+}
+
+.bottom-to-up {
+    @extend %basic-ball;
+    animation: anim-bottom-to-up 2s linear forwards;
+}
+
+@keyframes anim-left-to-right{
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: 0;
+        left: 345px;
+    }
+}
+@keyframes anim-top-to-bottom{
+    from {
+        top: 0;
+        left: 345px;
+    }
+    to {
+        top: 145px;
+        left: 345px;
+    }
+}
+@keyframes anim-right-to-left{
+    from {
+        top: 145px;
+        left: 345px;
+    }
+    to {
+        top: 145px;
+        left: 0;
+    }
+}
+@keyframes anim-bottom-to-up{
+    from {
+        top: 145px;
+        left: 0;
+    }
+    to {
+        top: 0;
+        left: 0px;
+    }
 }
