@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColorService } from '../color.service';
+import { ColorService } from '../../servicies/color/color.service';
 
 @Component({
   selector: 'app-ball',
@@ -15,8 +15,8 @@ export class BallComponent implements OnInit {
     'right-to-left',
     'bottom-to-up'
   ];
-  className = this.movementClass[0];
-  ballColor = '#bbb';
+  className = 'init-ball';
+  ballColor = '';
 
   constructor(private colorService: ColorService) { }
 
@@ -24,15 +24,15 @@ export class BallComponent implements OnInit {
     this.getColor();
   }
 
-  private getColor() {
+  getColor() {
     this.colorService.getColor()
       .subscribe((data: any) => {
-        console.log(data)
-        this.ballColor = '#' + data.new_color;
+        this.ballColor = '#' + data.colors[0].hex;
       });
   }
 
-  changeClass() {
+  moveBall() {
+    this.getColor();
     this.className = this.movementClass[this.currentCorner % 4];
     this.currentCorner++;
   }

@@ -6,6 +6,11 @@
     display: inline-block;
     top: 0;
     left: 0;
+    cursor: pointer;
+}
+
+.init-ball {
+    @extend %basic-ball;
 }
 
 .left-to-right {
@@ -15,7 +20,7 @@
 
 .top-to-bottom {
     @extend %basic-ball;
-    animation: anim-top-to-bottom 2s linear forwards;
+    animation: anim-top-to-bottom 1s linear forwards;
 }
 
 .right-to-left {
@@ -25,7 +30,7 @@
 
 .bottom-to-up {
     @extend %basic-ball;
-    animation: anim-bottom-to-up 2s linear forwards;
+    animation: anim-bottom-to-up 1s linear forwards;
 }
 
 @keyframes anim-left-to-right{
@@ -35,32 +40,32 @@
     }
     to {
         top: 0;
-        left: 345px;
+        left: 340px;
     }
 }
 @keyframes anim-top-to-bottom{
     from {
         top: 0;
-        left: 345px;
+        left: 340px;
     }
     to {
-        top: 145px;
-        left: 345px;
+        top: 140px;
+        left: 340px;
     }
 }
 @keyframes anim-right-to-left{
     from {
-        top: 145px;
-        left: 345px;
+        top: 140px;
+        left: 340px;
     }
     to {
-        top: 145px;
+        top: 140px;
         left: 0;
     }
 }
 @keyframes anim-bottom-to-up{
     from {
-        top: 145px;
+        top: 140px;
         left: 0;
     }
     to {
